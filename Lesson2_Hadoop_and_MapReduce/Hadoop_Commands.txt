@@ -1,0 +1,21 @@
+# pretty much like UNIX commands
+
+hadoop fs -ls       # list dir of HDFS
+hadoop fs -put file_name      # put file to HDFS
+hadoop fs -put file_name dir   # put file into a directory
+hadoop fs -tail file_name     # show last few lines
+hadoop fs -mv file_name new_name   # rename file
+hadoop fs -rm file_name    # delete file
+hadoop fs -mkdir dir_name   # make directory
+
+###### Running a MapReduce Job ######
+hadoop jar /usr/lib/...... -mapper mapper.py -reduce reducer.py
+-file mapper.py -file reducer.py -input myinput -output joboutput
+
+# Running a MapReduce Job with the VM Alias
+hs {mapper script} {reducer script} {input_file} {output directory}
+# NOTE that output directory must NOT exist (to avoid overwriting)
+#####################################
+
+hadoop fs -cat joboutput/part-00000 | less   # show final result
+hadoop fs -get joboutput/part-00000 mylocalfile.txt   # copy result to local disk
