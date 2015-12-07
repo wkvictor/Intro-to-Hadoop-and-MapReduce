@@ -1,0 +1,17 @@
+MapReduce Working Procedure:
+
+1. Development stage:
+1) create testfile
+head -50 ../data/purchases.txt > testfile    
+2) test mapper
+cat testfile | ./mapper.py      # pipe testfile to mapper
+3) test reducer
+cat testfile | ./mapper.py | sort | ./reducer.py
+
+2. Running stage:
+1) put file to HDFS:
+hadoop fs -put file_name      
+2) run the job:
+hs mapper_script reducer_script input_file output_directory
+3) collect result (copy result to local disk)
+hadoop fs -get output_directory/part-00000 mylocalfile.txt  
