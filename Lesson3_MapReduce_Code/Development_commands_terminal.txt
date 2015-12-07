@@ -1,0 +1,20 @@
+# Development phase -- no need to run Hadoop
+
+# Inside a terminal
+
+./mapper.py   # then input something (NOTICE tab-spacing)
+f1	f2	f3	f4	f5	f6
+fa	fb	fc	fd	fe	ff
+(Ctr+D to show results)
+
+# "create" test file in terminal
+head -50 ../data/purchases.txt > testfile    # create testfile
+
+# simulate mapper
+cat testfile | ./mapper.py      # pipe testfile to mapper
+
+# simulate reducer
+cat testfile | ./mapper.py | sort | ./reducer.py
+
+
+Read Chapter 3 of the book "Hadoop: The Definitive Guide"
