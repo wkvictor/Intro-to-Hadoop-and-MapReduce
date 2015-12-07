@@ -32,9 +32,9 @@ test_text = """2013-10-09\t13:22\tMiami\tBoots\t99.95\tVisa
 
 # This function allows you to test the mapper with the provided test string
 def main():
-	import StringIO
-	sys.stdin = StringIO.StringIO(test_text)
-	mapper()
-	sys.stdin = sys.__stdin__
+    import StringIO
+    sys.stdin = StringIO.StringIO(test_text)
+    mapper()
+    sys.stdin = sys.__stdin__
 
 main()

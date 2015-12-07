@@ -1,4 +1,5 @@
 # pretty much like UNIX commands in terminal
+# HDFS demo: https://www.udacity.com/course/viewer#!/c-ud617/l-308873795/m-309508557
 
 hadoop fs -ls       # list dir of HDFS
 hadoop fs -put file_name      # put file to HDFS
@@ -6,13 +7,16 @@ hadoop fs -put file_name dir_name   # put file into a directory
 hadoop fs -tail file_name     # show last few lines
 hadoop fs -mv file_name new_name   # rename file
 hadoop fs -rm file_name    # delete file
+hadoop fs -rm -r dir_name/   # force remove directory
 hadoop fs -mkdir dir_name   # make directory
+
 
 ###### Running a MapReduce Job ######
 hadoop jar /usr/lib/...... -mapper mapper.py -reduce reducer.py
 -file mapper.py -file reducer.py -input myinput -output joboutput
 
 # Running a MapReduce Job with the VM Alias
+# NOTE do not need {} in terminal!
 hs {mapper script} {reducer script} {input_file} {output directory}
 # NOTE that output directory must NOT exist (to avoid overwriting)
 #####################################

@@ -1,6 +1,6 @@
 # Development phase -- no need to run Hadoop
-
-# Inside a terminal
+# Running a job inside terminal: 
+# https://www.udacity.com/course/viewer#!/c-ud617/l-308873795/m-309382595
 
 ./mapper.py   # then input something (NOTICE tab-spacing)
 f1	f2	f3	f4	f5	f6
