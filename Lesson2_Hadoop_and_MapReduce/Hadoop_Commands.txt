@@ -1,8 +1,8 @@
-# pretty much like UNIX commands
+# pretty much like UNIX commands in terminal
 
 hadoop fs -ls       # list dir of HDFS
 hadoop fs -put file_name      # put file to HDFS
-hadoop fs -put file_name dir   # put file into a directory
+hadoop fs -put file_name dir_name   # put file into a directory
 hadoop fs -tail file_name     # show last few lines
 hadoop fs -mv file_name new_name   # rename file
 hadoop fs -rm file_name    # delete file
