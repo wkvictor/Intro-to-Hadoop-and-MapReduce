@@ -1,0 +1,2 @@
+Total number of sales 	773
+Total sales value 	3461.0

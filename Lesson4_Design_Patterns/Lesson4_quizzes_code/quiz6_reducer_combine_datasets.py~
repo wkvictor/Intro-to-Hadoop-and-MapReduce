@@ -1,0 +1,40 @@
+#!/usr/bin/python
+# Here you will be able to combine the values that come from 2 sources
+# Value that starts with A will be the user data
+# Values that start with B will be forum node data
+
+import sys
+
+old_key = None
+current_A = []
+current_B = []
+
+for line in sys.stdin:
+
+    data_mapped = line.strip().split('\t')
+    
+    this_key = data_mapped[0]
+    marker = data_mapped[1]
+
+    if old_key and old_key!=this_key:
+        for b in current_B:
+            print b + current_A
+
+        old_key = this_key
+        current_A = []
+        current_B = []
+        if marker == 'A':
+            current_A = data_mapped[2:]
+        else:
+            temp_B = data_mapped[2:5] + data_mapped[0:1] + data_mapped[5:] 
+            current_B.append(temp_B)
+
+    else:
+        old_key = this_key
+        if marker == 'A':
+            current_A = data_mapped[2:]
+        else:
+            temp_B = data_mapped[2:5] + data_mapped[0:1] + data_mapped[5:] 
+            current_B.append(temp_B)
+
+    
